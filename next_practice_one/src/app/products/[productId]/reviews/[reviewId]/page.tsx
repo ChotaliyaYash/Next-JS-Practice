@@ -8,6 +8,12 @@ type propsDetail = {
     }
 }
 
+
+const getRendomNumber = (count: number) => {
+    return Math.floor(Math.random() * count)
+  }
+  
+
 const ReviewDetails = (props: propsDetail) => {
   
     // destructuring
@@ -15,6 +21,12 @@ const ReviewDetails = (props: propsDetail) => {
 
     if(parseInt(reviewId) > 1000) {
         return notFound()
+    }
+
+    const random = getRendomNumber(2)
+
+    if(random === 1) {
+        throw new Error('Something went wrong')
     }
 
     return (
