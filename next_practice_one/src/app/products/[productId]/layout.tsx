@@ -1,3 +1,6 @@
+"use client"
+
+import { useRouter } from 'next/navigation'
 import React from 'react'
 
 type propsType = {
@@ -8,10 +11,17 @@ const ProductDetailLayout = (props: propsType) => {
 
     const { children } = props
 
+    const router = useRouter()
+
+    const handleClick = () => {
+        console.log("Go Home");
+        router.replace("/")
+    }
+
     return (
         <>
             {children}
-            <h2>Features products</h2>
+            <button onClick={handleClick} >Go Home</button>
         </>
     )
 }

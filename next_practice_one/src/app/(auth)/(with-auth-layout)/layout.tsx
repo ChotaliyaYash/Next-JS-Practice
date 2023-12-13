@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import React from 'react'
+import React, { useState } from 'react'
 
 type AuthLayoutProps = {
     children: React.ReactNode
@@ -11,6 +11,8 @@ type AuthLayoutProps = {
 const AuthLayout = (props: AuthLayoutProps) => {
 
     const { children } = props
+
+    const [input, setInput] = useState("");
 
     const navLinks = [
         { href: '/', label: 'Home' },
@@ -31,6 +33,9 @@ const AuthLayout = (props: AuthLayoutProps) => {
                         return <Link href={link.href} key={index} className={isActive ? "font-bold mr-4" : "text-blue-500 mr-4"}>{link.label}</Link>
                     })
                 }
+            </div>
+            <div className=''>
+                <input type="text" value={input} onChange={(e) => setInput(e.target.value)} />
             </div>
             {children}
             <Link href={"/forgot-password"}>Forgot Password</Link>
