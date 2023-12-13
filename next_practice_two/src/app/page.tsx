@@ -1,10 +1,14 @@
 import React from "react";
+import { getAllUser } from "../../utils/features";
 
-const Home = () => {
+const Home = async () => {
+	const user = await getAllUser();
+	console.log(user);
+
 	return (
-		<>
-			<h1>Home</h1>
-		</>
+		<div>
+			<h1>Hello world</h1>
+		</div>
 	);
 };
 
