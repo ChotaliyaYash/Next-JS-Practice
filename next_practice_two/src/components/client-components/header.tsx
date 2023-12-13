@@ -30,7 +30,7 @@ const Header = () => {
 					<input
 						type="text"
 						value={search}
-						placeholder="Searc    h..."
+						placeholder="Search..."
 						className="p-2 px-5 rounded-full border border-slate-400 focus:outline-none text-sm"
 						onChange={(e) => setSearch(e.target.value)}
 					/>
