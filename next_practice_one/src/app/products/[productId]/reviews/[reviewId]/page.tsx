@@ -1,4 +1,5 @@
 import React from 'react'
+import {notFound} from "next/navigation"
 
 type propsDetail = {
     params: {
@@ -11,6 +12,10 @@ const ReviewDetails = (props: propsDetail) => {
   
     // destructuring
     const {productId, reviewId} = props.params
+
+    if(parseInt(reviewId) > 1000) {
+        return notFound()
+    }
 
     return (
     <div>
